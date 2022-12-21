@@ -104,5 +104,38 @@ Tweeter::Tweeter(std::string first,
 
 ## Enum
 It give a name to a set of constans.
+This is the old version c-style.
+```
+enum Status
+{
+	Pending,
+	Approved, 
+	Cancelled
+};
+```
+## Scoped Enum
+It is a class.
+```
+enumclass FileError
+{
+	notfound,
+	ok
+};
+enumclass NetworkError
+{
+	disconnected,
+	ok
+};
 
+Status s = Pending;s = Approved;
+FileError fe= FileError::notfound;
+fe= FileError::ok;
+NetworkError ne = NetworkError::disconnected;
+ne = NetworkError::ok;
+
+```
 ## The Preprocessors
+The line start with `#`. It controls what is compiled.
+Use include guards in header files so that you don't recopile --> avoid to include multiple times the same header.
+
+`#pragma once` : can also help in doing the same 
