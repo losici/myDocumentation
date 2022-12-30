@@ -25,30 +25,66 @@ class LinkedList(object):
             current.next = new_element
         else:
             self.head = new_element
+
             
     def get_position(self, position):
         """Get an element from a particular position.
         Assume the first position is "1".
         Return "None" if position is not in the list."""
-
+        if position < 1:  # Just in case the position is too small
+            return
         current = self.head
-        while current and position>1:
+        while current and position > 1:
             position -= 1
             current = current.next
-            return current
-        return 
+        return current
         
+  
     def insert(self, new_element, position):
         """Insert a new node at the given position.
         Assume the first position is "1".
         Inserting at position 3 means between
         the 2nd and 3rd elements."""
-        pass
-    
+        new_node = new_element
+        if position < 1:
+            print("Error")
+        else:
+            current = self.head
+            counter = 0
+            while current:
+                counter += 1
+                if counter == position -1:
+                    temp = current.next
+                    current.next = new_node
+                    new_node.next = temp
+                    break
+                else:
+                    current = current.next
+
+    def display(self):
+        current = self.head
+        while(current.next != None):
+            print(current.value)
+            current = current.next
+        print(current.value)
+                
     
     def delete(self, value):
         """Delete the first node with a given value."""
-        pass
+        current = self.head
+        previous = None
+        while current.next:
+            if current.value == value:
+                if previous:
+                    previous.next = current.next
+                else:
+                    self.head = current.next
+                break
+            else:
+                previous = current
+                current = current.next
+
+
 
 # Test cases
 # Set up some Elements
@@ -69,7 +105,12 @@ print (ll.head.next.next.value)
 print (ll.get_position(3).value)
 
 # Test insert
+print("display")
+ll.display()
+print("before insert")
 ll.insert(e4,3)
+print("after insert")
+ll.display()
 # Should print 4 now
 print (ll.get_position(3).value)
 
