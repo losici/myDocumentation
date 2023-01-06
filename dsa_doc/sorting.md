@@ -23,12 +23,15 @@ Worst case = O(nlog(n)): n comparisons for log(n) steps<br/>
 For Merge sort you need an auxillary space of O(n) because we got read of the old ones. We need two different arrays at each step. The array where the numbers were in and the new array that we're copying the values into.
 
 # Quick Sort
+It is also called "Partition - Exchange Sort".<br/>
 you pick a random value in the array and move all values larger than it above it and all values below it lower than it. The value that you pick initially is called a **pivot**.The convention is pick the last element as a pivot.
 ## Efficiency 
 The efficiency is pretty complicated. First let's look to the quick sort.<br/>
 Worst case: O(n^2)
 Average case = O(nlog(n))<br/>
-Best case = O(nlog(n))<br/>
-If we know we are getting arrays that are near sorted we don't want to use quick sort. We can do some optimizations:
-- We can run the comparisons at both time;
--  
+Best case = O(nlog(n))<br/>: pivot goes to the middle.
+If we know we are getting arrays that are near sorted we don't want to use quick sort because it will fall in the worst case most of the time.<br/>
+We can do some optimizations:
+- We can run the comparisons on the two splitted aerray at the same time;
+- Selecting the median of the pivot is better because it gives you an idea of what there can be in the middle.
+The space complecity is O(1) because we are not using any extra space.
