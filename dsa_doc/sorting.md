@@ -25,6 +25,15 @@ For Merge sort you need an auxillary space of O(n) because we got read of the ol
 # Quick Sort
 It is also called "Partition - Exchange Sort".<br/>
 you pick a random value in the array and move all values larger than it above it and all values below it lower than it. The value that you pick initially is called a **pivot**.The convention is pick the last element as a pivot.
+## Practicality
+Take a pivot randomly.
+On the left we want all elements <= pivot and on the right we want all the elements >= pivot.
+1. chooe a pivot as last element or random
+1. stores elements less than pivot in left subarray
+1. Stores elements grater than a pivot in right subarray
+1. Call quicksort recursively on left subarray
+1. Call quicksort recursively on right subarray
+
 ## Efficiency 
 The efficiency is pretty complicated. First let's look to the quick sort.<br/>
 Worst case: O(n^2)
