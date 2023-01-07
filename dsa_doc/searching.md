@@ -13,3 +13,15 @@ O(log(n)+1) = O(logn)
 
 Create a table: array size and iterations to spot the patterns.
 
+# Recursion
+A recursive function needs:
+1. To call itself;
+2. Base case: exit condition to avoid being stucked in the infinite recursion;
+3. Alter the input parameter;
+
+# Sorting
+You change the the order of the array.
+
+## Naive approach
+Compare every element with every element. But for sure there is a smarter way to solve it.
+
