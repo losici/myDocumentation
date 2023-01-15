@@ -47,12 +47,44 @@ Graph search: you stop traversing when you find the element.<br/>
 You can begin with every node. Mark the node you selected as **seen**. A common implementation is to use a **stack**.<br/>
 You add the node in the Seen as long you go, and then the vertex in the stack. If you encounter a node that you have already seen you go back to the previous node and try another edge. If you run out of edges then you pop the node from the stack and go to the one before, which is  the next one in the stack. You continue this approach until you pop everything off (LIFO) from the stack or you find the node you were looking for.<br/>
 Runtime = O(|E|+|V|) you visit each vertex and edge.<br/>
-The number of edges summarize the runtime very well.
+The number of edges summarize the runtime very well.<br/>
+### Summary DFS
+- stack
+- you explore first vertically
+- 
+
+The rough algorithm for DFS can be thought of as the following:
+
+1. Start at s. It has distance 0 from itself.
+1. Consider a node adjacent to s. Call it t. It has distance 1. Mark it as visited.
+1. Then consider a node adjacent to t that has not yet been visited. It has distance 2. Mark it as visited.
+1. Repeat until all nodes reachable from s﻿ are visited.
 ## BFS
 It is similar to DFS, you visit every edges and you mark every node. Here the implementation is with a **queue**.
 You mark the first as a seen, we go to the next one and we add it to the queue (FIFO). You dequeue when you run out of edges. When we dequeue we get a node adjacent to the one that we started with. You can envision a BSF like a tree out of a graph. We need to continue adding nodes one level at a time. We finish off one level entirely before moving on to the next.<br>
 Runtime = O(|E|+|V|) you visit each vertex and edge.<br/>
 
+### Summary BFS
+- breadth = broad/wide
+- the algorithm first move horizontally and then vertically
+- the algorithm uses a queue
+- BFS is the algorithm to use if we want to find the shortest path in an **undirected, unweighted graph**. The claim for BFS is that the first time a node is discovered during the traversal, that distance from the source would give us the shortest path.
+The rough algorithm for BFS can be thought of as the following:
+
+1. Begin at the starting node s. It has distance 0 from itself.
+1. Consider nodes adjacent to s. They have distance 1. Mark them as visited.
+1. Then consider nodes that have not yet been visited that are adjacent to those at distance 1. They have distance 2. Mark them as visited.
+1. Repeat until all nodes reachable from s are visited.
+
+## Comparison BFS and DFS
+Both DFS and BFS have a worst-case time complexity of O(|V| +|E|).<br/>
+Notice, however, that, though their worst-case time complexities are the same, their memory management is totally different! In other words, to traverse the graph, BFS had to store all of a vertex's neighbors in each step in a queue to later be able to traverse those neighbors. On the other hand, if you take a look at the recursive implementation of DFS, DFS only needed to store the previous neighbor to explore the next one. As a result, for certain graph structures, DFS can be more memory-efficient.
+
+## Dijkstra's Algorithm
+Useful for **weighted graph**.
+The idea behind Dijkstra's Algorithm is that we are constantly looking for the **lowest-weight** paths and seeing which vertices are discovered along the way. As a result, the algorithm explores neighbors similarly to how the Breadth First Search algorithm would, except that it prioritizes which neighbors it searches for next by calculating which neighbor lies on the path with the lowest overall path weight.
+### Summary
+- priority queue: to store the possible paths and uses the total weights of the paths to determine priority.
 ## Eulerian Paths and Cycles
 A path is just a specific route you take in a traversal or search. You could create a path trah travels through every edge in a graph at least once. That path is called Eulerian Path.<br/>
 Eulerian Cycle: you have to traverse the edge only once and end in the node where you started. Not every graph is capable to have an Eulerian Path. Graphs can have eulerian cycles if all vertices have an even degree or an even number of edges connected to them. Eulerian Paths are a little bit more lenient. So it's ok for a graph to have two nodes with odd degree as long as they are the start and the end of the path.
