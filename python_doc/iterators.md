@@ -15,3 +15,7 @@ Generators asre single use objects, to recreate a generstor from a generator exp
 - all(): determines if all elements in a series are true
 - zip(): sync iterations across two or more iterable series<br/>
 ![zip](/python_doc/imgs/zip.png "zip")<br/>
+
+# Summary
+![summary1](/python_doc/imgs/summary1.png "summary1")<br/>
+![summary2](/python_doc/imgs/summary2.png "summary2")<br/>
