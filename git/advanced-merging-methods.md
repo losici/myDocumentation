@@ -21,3 +21,8 @@ squash 24673292 continuing
 
 # Rebase
 it helps to create a more coherent story. It doesn't move the original commits but it create a copy of your commits so that it can change the parent. 
+
+```
+config git pull.rebase true
+git pull
+```

@@ -13,8 +13,8 @@ There are many names for test doubles:
 - fakes
 
 But in practise they can be all grouped in 2 categories **stubs** and **mocks**, but most of the frameworks they just call everything **mocks**. The difference is that"
-- Stubs supply data to the system under tests, it fakes data taken from the shared dependencies and it supply that data to a system under test. It takes care of incoming data interactions 
-- mocks when a test double is used to verify that our system under test has tried to communicate with a shared dependencied. It takes care of outgoing communications. 
+1. **Stubs**: predefined return for interface. It supplies data to the system under tests, it fakes data taken from the shared dependencies and it supply that data to a system under test. It takes care of incoming data interactions 
+1. **Mocks**: predefined behaviour for interaction. When a test double is used to verify that our system under test has tried to communicate with a shared dependencies. It takes care of outgoing communications. 
 
 ## Unit test vs integration test
 One of the purpose of integration tests is to provide automaiton testing for things like shared dependencies under code associated. <br/>
