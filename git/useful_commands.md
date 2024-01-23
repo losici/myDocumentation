@@ -29,3 +29,11 @@ git push  -f
 git revert <commit-hash>
 ```
 Then push the reverted change
+1. Update a branch with the master: using git merge
+```
+git switch master 
+git pull
+git switch mybranch
+git pull
+git merge master
+```
