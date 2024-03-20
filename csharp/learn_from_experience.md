@@ -38,3 +38,4 @@ var resultsZip = list1.Zip(list2, Func).ToList();
 ```
 
 ## FOREACH vs FOR
+TBD

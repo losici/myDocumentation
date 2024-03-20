@@ -1,0 +1,15 @@
+C:\code\myDocumentation\csharp\learning_project\learnProj\bin\Debug\net8.0\learnProj.exe
+C:\code\myDocumentation\csharp\learning_project\learnProj\bin\Debug\net8.0\learnProj.deps.json
+C:\code\myDocumentation\csharp\learning_project\learnProj\bin\Debug\net8.0\learnProj.runtimeconfig.json
+C:\code\myDocumentation\csharp\learning_project\learnProj\bin\Debug\net8.0\learnProj.dll
+C:\code\myDocumentation\csharp\learning_project\learnProj\bin\Debug\net8.0\learnProj.pdb
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\learnProj.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\learnProj.AssemblyInfoInputs.cache
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\learnProj.AssemblyInfo.cs
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\learnProj.csproj.CoreCompileInputs.cache
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\learnProj.sourcelink.json
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\learnProj.dll
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\refint\learnProj.dll
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\learnProj.pdb
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\learnProj.genruntimeconfig.cache
+C:\code\myDocumentation\csharp\learning_project\learnProj\obj\Debug\net8.0\ref\learnProj.dll
