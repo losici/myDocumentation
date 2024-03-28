@@ -31,7 +31,7 @@ git rebase mybranch develop
 git push  -f
 ```
 >Note: if you mess up your local changes, just delete them and checkout the branches again.
-1. revert a commit that was already pushed
+1. revert a commit that was already pushed: this creates a commit that revert the previous one
 ```
 git revert <commit-hash>
 ```
@@ -43,4 +43,10 @@ git pull
 git switch mybranch
 git pull
 git merge master
+```
+1. If you want to discard completely some commits
+For example you have A -> B -> C -> D, where A,B,C,D are commit hash and you want to discard completely C and D, do the following
+```
+git reset --hard B
+git push --force
 ```
