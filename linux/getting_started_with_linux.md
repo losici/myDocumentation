@@ -1,0 +1,78 @@
+# Getting Started With Linux
+
+## Licensing
+1. FSF - Free Software Foundation: it allows the user to do freely what they want to do it. GPL
+1. Open Source Initiative, more flexible licensing avaiable. The original programming source is make available to users. BSD distribution
+
+## The Linux Operating System
+Created by Linus Torvalds.
+
+OS gives access to storage device, cpu . All desktop OS provide access through GUI or cli. 
+The Linux Kernel is Free. 
+
+## The Layers of a Linux Distribution
+Targets:
+- phone
+- pc
+- raspberry pi
+
+LVM: Local Volum Manager: if you have multiple drives you can  combine different volumes. 
+
+## The Linux Boot Process
+
+BIOS = Basic Input Output System
+UEFI = 
+
+The boot process takes a survey of the hardware resources which are available and it look for  a storage device with a viable Master Boot Record. 
+Then for a linux system the Bootloader called GRUB is launched, the kernel will be loaded into memory.
+
+CTRL+ALT+T opens a new cml linux
+
+## Linux Runlevels
+
+0 system halt: shut the system off
+1 single-user (rescue) mode: work without connectivity
+3 multi-user mode without GUI: multi user systems 
+5 multi-user mode with GUI
+6 reboot
+Linux gives the ability to use simulteneus access 
+
+`systemctl` get-default" shows the run level target that is currently active.
+you can change the target with
+`systemctl isolare rescue.target.`
+`systemctl enable multi-user`
+## Linux File System Hierarchy
+
+`/bin` Binary files for single user mode commands
+/sbin Binary files for multi-user commands: system binary files only accessible in multi users sessions
+/boot Linux images and boot configuration files
+/dev Pseudo files representing devices
+/etc Configuration files: configuration files used by the software system account 
+/home User files
+/lib Software library dependencies: needed by binary programs
+/root Root user files : directory usually not used because admin won't log in as a user
+/usr Additional binaries: non essential commands binaries
+/var Updating files (logs, app data, cache): files whose content is likely to be updated often (email for example)
+
+/proc Files representing running system processes
+/dev Pseudo files representing devices: hardware devices in devices drivers
+/sys Data on system and kernel resources: system resources and kernel features
+
+
+## Managing HW
+### What is a server?
+A server is any computer on which there's at least one process running whose job is the one of serving a remote user called a client.
+
+Server racks have better cooling down fan and the space is maximized to have it organized in racks.
+
+- df -ht ext4
+- lsblk | grep sd
+- dmesg | grep wl
+- less /etc/default/grub
+- export myval
+
+Server virtualization is a technique to partition resources of a computer to create subsystems where each subsystem will launch an operating system 
+
+### useful commands
+- ls/ : shows all the directories
+- cat
