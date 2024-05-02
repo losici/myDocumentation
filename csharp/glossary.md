@@ -26,3 +26,6 @@ public sealed override void MyMethod()
 }
 
 ```
+
+## consumer
+In C#, the term "consumer" of an object typically refers to any component or part of the code that uses or interacts with that object. This could be a function, a method, another class, or even a module that utilizes the object to perform some operation or to maintain state. Essentially, the consumer is whatever needs or depends on the object to function correctly.

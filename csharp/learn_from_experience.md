@@ -39,3 +39,20 @@ var resultsZip = list1.Zip(list2, Func).ToList();
 
 ## FOREACH vs FOR
 TBD
+
+## Check For Nullability
+Do this
+```
+measurement.SurfaceError = surfaceError ?? SurfaceError.Default;
+```
+Instead of this:
+```
+if( surfaceError != null )
+{
+	measurement.SurfaceError = surfaceError;
+}
+else
+{
+	measurement.SurfaceError = SurfaceError.Default;
+}
+```
