@@ -1,5 +1,6 @@
 # Understanding C Structure
-tbd
+## Structure Basics
+
 # Using C Structures
 tbd
 # Managing memory with Bit Fields
