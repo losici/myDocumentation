@@ -43,20 +43,19 @@ you can change the target with
 `systemctl enable multi-user`
 ## Linux File System Hierarchy
 
-`/bin` Binary files for single user mode commands
-/sbin Binary files for multi-user commands: system binary files only accessible in multi users sessions
-/boot Linux images and boot configuration files
-/dev Pseudo files representing devices
-/etc Configuration files: configuration files used by the software system account 
-/home User files
-/lib Software library dependencies: needed by binary programs
-/root Root user files : directory usually not used because admin won't log in as a user
-/usr Additional binaries: non essential commands binaries
-/var Updating files (logs, app data, cache): files whose content is likely to be updated often (email for example)
-
-/proc Files representing running system processes
-/dev Pseudo files representing devices: hardware devices in devices drivers
-/sys Data on system and kernel resources: system resources and kernel features
+* /bin: Binary files for single user mode commands
+* `/sbin`: Binary files for multi-user commands: system binary files only accessible in multi users sessions
+* `/boot`: Linux images and boot configuration files
+* `/dev Pseudo files representing devices
+* /etc Configuration files: configuration files used by the software system account 
+* /home User files
+* /lib Software library dependencies: needed by binary programs
+* /root Root user files : directory usually not used because admin won't log in as a user
+* /usr Additional binaries: non essential commands binaries
+* /var Updating files (logs, app data, cache): files whose content is likely to be updated often (email for example)
+* /proc Files representing running system processes
+* /dev Pseudo files representing devices: hardware devices in devices drivers
+* /sys Data on system and kernel resources: system resources and kernel features
 
 
 ## Managing HW
@@ -73,6 +72,6 @@ Server racks have better cooling down fan and the space is maximized to have it 
 
 Server virtualization is a technique to partition resources of a computer to create subsystems where each subsystem will launch an operating system 
 
-### useful commands
-- ls/ : shows all the directories
-- cat
+
+# References
+1. https://bootstrap-it.com/linux-start/
