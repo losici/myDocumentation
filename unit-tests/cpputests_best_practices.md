@@ -1,5 +1,7 @@
 # CPPUTEST
 
+[TOC]
+
 ## Comparators
 We typically implement comparators for stubbed functions that take a pointer to a struct. We typically do not implement comparators for functions that take pointers to void or unsigned char, char, uint8_t, etc.
 For that we use the built-in byte array comparators, or in some cases we just compare the pointer value (only rarely).
@@ -66,3 +68,39 @@ void splitFromUInt64(uint64_t value, uint32_t& high, uint32_t& low)
     low = (uint32_t)(value & 0xFFFFFFFF);
 }
 ```
+
+## Mocking functions with pointers parameters
+When mocking a function that has pointer parameters, you need to handle the pointers correctly in both the mock function implementation and the test expectations. In our example, the function sl_bt_gatt_server_get_mtu has a pointer parameter uint16_t* mtu.
+1. Pointers and Output Parameters: When mocking functions with pointer parameters, you must handle input and output pointers separately. Input pointers are passed directly, while output pointers are set using `withOutputParameterReturning`.
+1. Using sizeof: The `sizeof` operator ensures you correctly specify the size of the data being set or used. This is particularly important for output parameters to avoid memory corruption or incorrect values. Using sizeof ensures that the correct amount of memory is used for the output parameter, which is crucial for properly simulating the behavior of the function.
+
+```
+// declaration
+sl_status_t sl_bt_gatt_server_get_mtu(uint8_t connection, uint16_t* mtu);
+
+...
+// usage in code
+uint16_t mtu = 0;
+sc = sl_bt_gatt_server_get_mtu(event->connection, &mtu);
+
+// mock stub
+sl_status_t sl_bt_gatt_server_get_mtu(uint8_t connection, uint16_t* mtu)
+    {
+        mock()
+            .actualCall("sl_bt_gatt_server_get_mtu")
+            .withParameter("connection", connection)
+            .withOutputParameter("mtu", mtu);
+        
+        return static_cast<sl_status_t>(mock().returnUnsignedIntValueOrDefault(0));
+    }
+
+// usage in unit test
+...
+    mock()
+        .expectOneCall("sl_bt_gatt_server_get_mtu")
+        .withParameter("connection", connection)
+        .withOutputParameterReturning("mtu", &mtu, sizeof(mtu))
+        .andReturnValue(SL_STATUS_OK);
+...
+```
+
