@@ -1,4 +1,5 @@
 # Useful commands
+[TOC]
 ## Delete a branch
 ```
  git branch -d <branch name>
@@ -65,3 +66,10 @@ For example you have A -> B -> C -> D, where A,B,C,D are commit hash and you wan
 git reset --hard B
 git push --force
 ```
+
+## cherry pick a commit
+```
+git cherry-pick a1b2c3d4
+```
+
+Do not forget to push!
