@@ -73,3 +73,10 @@ git cherry-pick a1b2c3d4
 ```
 
 Do not forget to push!
+
+## Search for string addition removal in commits
+To check when a function with a specific name was removed from a codebase using Git, especially when it's not immediately apparent in the commit messages.
+The -S option in git log allows you to search through the commit history for changes of the count of a string, which means adding or removing specific strings of text (like a function name).
+```
+git log -S"function_name" --source --all
+```
