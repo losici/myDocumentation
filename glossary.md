@@ -4,6 +4,7 @@
 [C](#c)
 [D](#d)
 [E](#e)
+[F](#f)
 [S](#s)
 [U](#u)
 
@@ -28,6 +29,8 @@ It describes the order in which computer memory stores a sequence of bytes. Endi
   address 1000 = 52
   address 1001 = 4F
   ```
+## F
+1. Full-Duplex: Full duplex is a communication mode in which data transmission can occur simultaneously in both directions between two devices. In other words, both devices can send and receive data at the same time. This is contrasted with half duplex, where data transmission can only occur in one direction at a time.
 ## N
 1. Network Byte Order: refers to the ordering of bytes in network communications, specifically the way multi-byte values, such as integers, are transmitted over a network. This order is also known as "big-endian" byte order. Network Byte Order is used universally in network protocols to ensure that data is understood correctly regardless of the underlying computer architecture. It is a standard practice in protocols like IP (Internet Protocol), TCP (Transmission Control Protocol), and UDP (User Datagram Protocol), helping to maintain consistency and interoperability across different systems and platforms. 
 ## S
