@@ -12,9 +12,8 @@
 ## B
 ## C
 ## D
-
-
 1. Deployment: set of activities to make software available to be distributed and used by others.
+1. DNS = Domain Name System
 ## E
 ### Endianness 
 It describes the order in which computer memory stores a sequence of bytes. Endianness can be either big or small, and the adjectives refer to the value stored first. Big-endian is an order in which the big end -- the most significant value in the sequence -- is first, at the lowest storage address. Little-endian is an order in which the little end, the least significant value in the sequence, is first. 
