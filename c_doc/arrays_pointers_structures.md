@@ -105,5 +105,43 @@ demoPassByReference(&y); // I pass the memory address of the variable nby placin
 ```
 ### Passing arrays to functions
 
-# Data structures
 
+## Passing a structure as a pointer or not
+
+Consider the memcopy function 
+
+memcopy(destination, source, size)
+
+```c
+memcpy(flash_data, logRecord, sizeof(*logRecord)); // 1
+memcpy(flash_data, &logRecord, sizeof(logRecord)); // 2
+```
+
+The difference between these two memcpy calls lies in how the logRecord is being passed and interpreted in the memcpy function. Let's break down both cases:
+
+1. memcpy(flash_data, logRecord, sizeof(*logRecord));
+```c
+memcpy(flash_data, logRecord, sizeof(*logRecord));
+```
+Explanation:
+
+1. logRecord as a Pointer: In this case, logRecord is assumed to be a pointer to a SystemEventLogRecord structure (e.g., SystemEventLogRecord* logRecord).
+1. Dereferencing logRecord (*logRecord): The sizeof(*logRecord) expression evaluates the size of the structure pointed to by logRecord. This gives the correct size of the data that logRecord points to.
+1. Memory Copy Operation: The memcpy copies sizeof(*logRecord) bytes of data from the memory location that logRecord points to (i.e., the actual contents of the SystemEventLogRecord structure) into flash_data.
+
+This works correctly because: logRecord points to the actual data, and memcpy copies that data correctly into flash_data.
+The size passed to memcpy is the correct size of the SystemEventLogRecord structure.
+
+```c
+memcpy(flash_data, &logRecord, sizeof(logRecord));
+```
+Explanation:
+
+1. logRecord as a Value (Not a Pointer): Here, logRecord is treated as an instance (a variable) of the SystemEventLogRecord structure, not a pointer. The &logRecord expression gives the address of this instance, i.e., a pointer to the entire logRecord structure.
+1. Size of logRecord: The sizeof(logRecord) gives the size of the SystemEventLogRecord structure, which is correct in terms of how much data needs to be copied.
+1. Memory Copy Operation: The memcpy now attempts to copy sizeof(logRecord) bytes of data starting from the address of logRecord (i.e., the address of the whole structure) into flash_data.
+
+This does not work as intended because:
+
+Incorrect Pointer Level: &logRecord is a pointer to logRecord itself (the address of the entire structure), not a pointer to the contents of logRecord. As a result, memcpy copies the address (the pointer value) rather than the actual data that logRecord holds.
+Misinterpretation of Data: The result is that flash_data does not receive the expected content of logRecord but instead contains the address of logRecord, which is likely why you see unexpected or incorrect data in flash_data.
