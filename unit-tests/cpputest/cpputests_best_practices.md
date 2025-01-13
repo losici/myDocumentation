@@ -104,3 +104,56 @@ sl_status_t sl_bt_gatt_server_get_mtu(uint8_t connection, uint16_t* mtu)
 ...
 ```
 
+## Share variables between tests
+In CppUTest, if you want a variable initialized in the setup() method to be visible and usable across other tests, the correct approach is to use a **member variable** (not a local variable) of the test class. 
+Here's how you can achieve that:
+1. Declare the Variable as a Member of the Test Group Class
+
+1. Instead of initializing the variable as a local variable in setup(), declare it as a member variable of the test class.
+Initialize the Member Variable in setup()
+
+1. Use the setup() method to prepare the initial state of the variable for each test.
+Use the Variable in Your Tests
+
+Since member variables of the test class are shared among all test methods, they will be accessible.
+```cpp
+#include <CppUTest/TestHarness.h>
+
+// Test group
+TEST_GROUP(MyTestGroup)
+{
+    int sharedVariable; // Member variable declaration
+
+    void setup() override
+    {
+        sharedVariable = 42; // Initialize the member variable
+    }
+
+    void teardown() override
+    {
+        // Clean up if necessary
+    }
+};
+
+TEST(MyTestGroup, Test1)
+{
+    // Access the shared variable
+    CHECK_EQUAL(42, sharedVariable);
+}
+
+TEST(MyTestGroup, Test2)
+{
+    // Modify and check the shared variable
+    sharedVariable += 10;
+    CHECK_EQUAL(52, sharedVariable);
+}
+
+TEST(MyTestGroup, Test3)
+{
+    // sharedVariable is reset to 42 by setup()
+    CHECK_EQUAL(42, sharedVariable);
+}
+
+```
+**Why Not Use a Local Variable?**
+A local variable in setup() is scoped only to the setup() method and won't be visible to the other tests. Using a member variable ensures the variable persists for the duration of the test and is properly reset or reinitialized before each test.
