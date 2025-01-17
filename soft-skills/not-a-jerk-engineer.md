@@ -23,8 +23,11 @@ Always end with a positive note and positive attitude questions such as:
 1. Did you get something from here?
 
 ## Giving Feedback
-That is a very big and difficult topic. 
-Some ideas.
+That is a very big and difficult topic.
+Some ideas:
+1. Keep in mind that unless you are a manager it is not your responsibility to improve people.
+1. Stick to criticize the content, and not the behavior
+1. If behavior is a problem fill in a table where you count for example some faults that people did. After you ask a person if that is done on purpose or not.
 
 ## How to get what you want
 
