@@ -1,6 +1,13 @@
 # Understanding C Structure
 ## Structure Basics
 
+### Initialize structures to 0
+
+```c
+struct Point p4;
+memset(&p4, 0, sizeof(p4));  // Set all members to 0
+```
+
 # Using C Structures
 tbd
 # Managing memory with Bit Fields

@@ -75,6 +75,28 @@ git checkout existing-branch
 git branch new-branch
 git checkout new-branch
 ```
+# Rename a branch that was already pushed to the server
+1. Ensure you're on the branch you want to rename
+    ```sh
+    git branch
+    ```
+1. Rename it:
+    ```sh
+    git branch -m new-branch-name
+    ```
+1. if the branch is pushed to a remote, delete the old branch on the remove 
+    ```sh
+    git push origin --delete old-branch-name
+    ```
+1. push the new branch
+    ```sh
+    git push origin new-branch-name
+    ```
+1. update the upstream tracking if needed
+    ```sh
+    git branch --unset-upstream
+    git push --set-upstream origin new-branch-name 
+    ```
 # Rebase vs Merge
 ## Rebase a branch into master
 The rebase is done commit by commit, if a commit in the middle differs, than you have manually fix it and then continue the rebase with the continue command. 
