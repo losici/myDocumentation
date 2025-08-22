@@ -13,6 +13,11 @@ If you've already cloned the repository, you can update it:
 ```sh
 git fetch --unshallow
 ```
+If you already checked out the project but some submodules failed to be downloaded use
+```
+git submodule update --init --recursive
+```
+
 # Commit operations
 ## Reword a commit 
 ### In case of older commit messages
@@ -129,3 +134,11 @@ git switch mybranch
 git pull
 git merge master
 ```
+
+# Remove tracking branches no longer on remote
+## Porcelain command
+```sh
+git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
+```
+Always double-check with `git branch -vv` before deleting to ensure you don’t lose valuable work.
+
