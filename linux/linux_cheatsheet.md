@@ -1,7 +1,7 @@
 # Commands worth knowing
 [TOC]
 ## File Commands
-#### ls 
+### ls 
 Directory listing: list all the files in my current folder. In cli the files that are executables are indicated by .*. In linux to execute files ./main without any .extension.
 ### ls -all
 Also `ls -a` it shows a formatted listing with hidden files
@@ -176,3 +176,7 @@ curl -o /path/to/directory/filename.ext URL
 where:
 - Replace /path/to/directory/filename.ext with the path where you want to save the file and what you want to name it.
 - Replace URL with the URL of the file you want to download
+
+## Misc
+### clean the terminal
+CTRL+L
